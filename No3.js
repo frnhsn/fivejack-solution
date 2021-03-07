@@ -14,9 +14,9 @@ function getCombinations(chars) {
     return result.sort((a,b)=>a.length-b.length);
   }
 
-// To check combination's minimality, we have to make sure a candidate key is 
+// To check combination's minimality, we have to make sure a key in candidate keys is 
 // not a subset of the combination. For example "02" is a subset of "012" so 
-// "02" is not minimal. Output true or false
+// "012" is not minimal. Output true or false
 function isMinimal(key,candidateKeys) {
   for (let ck of candidateKeys) {
       if (Array.from(new Set(key.concat(ck))).length == Array.from(new Set(key)).length) return false;
